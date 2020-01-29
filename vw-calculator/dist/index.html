@@ -1,0 +1,76 @@
+<!--
+
+This template is from codepen
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FE 4 CALCULATOR</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div class="load">
+    <hr/><hr/><hr/><hr/>
+</div>
+
+
+<div class="content" style="display: none">
+
+    <form>
+
+        <div class="field pixel">
+            <label for="pixel">Enter a number for X</label>
+            <input id="pixel" name="x" required type="number" min="0" value="0" class="m-pixel"/>
+        </div>
+
+        <div class="field pixel">
+            <label for="vpwidth">Enter a number for Y</label>
+            <input id="vpwidth" name="y" required type="number" min="0" value="0" class="m-vpwidth"/>
+        </div>
+
+        <input type="hidden" name="operation" value="" id="submit">
+
+        <div class="center">
+
+            <button type="button" name="operation" value="multiplacation" style="display: inline">
+                <a>Multiply</a>
+            </button>
+
+            <button type="button" name="operation" value="division" style="display: inline">
+                <a>Division</a>
+            </button>
+
+            <button type="button" name="operation" value="substraction" style="display: inline">
+                <a>Substract</a>
+            </button>
+
+            <button type="button" name="operation" value="addition" style="display: inline">
+                <a>Addition</a>
+            </button>
+
+            <button type="button" name="operation" value="modulo" style="display: inline">
+                <a>Mod</a>
+            </button>
+
+        </div>
+
+    </form>
+
+    <div class="output">
+        <label></label>
+    </div>
+
+</div>
+
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js'></script>
+<script src="./script.js"></script>
+
+</body>
+</html>

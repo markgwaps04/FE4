@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form>
+    Username : <input type="text" name="username" value="" required>
+    Passsword : <input type="password" name="password" value="" required>
+    <button type="submit">Submit</button>
+</form>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+    (function () {
+
+       jQuery("form").submit(function (e) {
+
+           e.preventDefault();
+
+           const root = this;
+
+           const values = (function () {
+
+               const init = $(root).serializeArray();
+               const obj = {};
+               init.forEach(function (per) {
+                  obj[per.name] = per.value;
+               });
+
+               return obj;
+
+           })();
+
+
+          const res = jQuery.ajax({
+             url : "/Capstone_api/request.php",
+             data : values,
+             type : "post",
+             method : "POST"
+          });
+
+          res.done(function (_value) {
+             console.log(_value);
+          });
+
+       });
+    })();
+
+</script>
+
+
+</body>
+</html>
